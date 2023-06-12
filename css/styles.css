@@ -1,0 +1,98 @@
+/* Reset */
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom properties */
+:root{
+    --clr-primary: 0 0% 100%;
+    --clr-dark: 0 100% 0%;
+    --clr-light: 0 0% 85%;
+    --clr-accent: 16 100% 40%;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+body{
+    background-color: hsl(var(--clr-light));
+    max-width: max(21.25rem, 50vw);
+    margin: auto;
+    min-height: 100vh;
+}
+
+/* Utility Classes */
+/* Typography  */
+.bg-primary{
+    background-color: hsl(var(--clr-primary));
+}
+
+.text-dark{
+    color: hsl(var(--clr-dark));
+}
+
+.text-accent{
+    color: hsl(var(--clr-accent));
+}
+
+/* Layout */
+.flex{
+    display: flex;
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space, 2rem);
+}
+
+.container{
+    padding-inline: 2rem;
+}
+
+/* Components */
+.card{
+    padding-block-end: 2rem;
+    margin-block-start: 2rem;
+    overflow: hidden;
+}
+
+.image-container{
+    overflow: hidden;
+}
+
+.card__image{
+    transition: transform 400ms;
+    height: 100%;
+    object-fit: cover;
+    outline: 3px solid lime;
+}
+
+.card:hover .card__image{
+    transform: scale(1.2);
+}
+
+.card__text{
+    flex-direction: column;
+}
+
+.card__category,
+.card__cta{
+    text-transform: uppercase;
+}
+
+.card__title{
+    margin-block: 2rem 6rem;
+}
+
+.card__category{
+    color: hsl(var(--clr-dark) / 0.65);
+}
+
+.card__cta{
+    text-decoration: none;
+}
